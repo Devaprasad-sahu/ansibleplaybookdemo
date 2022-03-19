@@ -1,5 +1,4 @@
----
-  - hosts: localhost
+ - hosts: localhost
     become: yes
     tasks:
       - name: install apache2
@@ -19,10 +18,10 @@
         lineinfile: dest=/etc/apache2/sites-available/000-default.conf regexp="^<VirtualHost \*:80>" line="<VirtualHost *:7777>" state=present
         notify:
           - restart apache2
-      - name: ensure apache is running
+       - name: ensure apache is running
           service:
-             name: httpd
-             state: started 
+              name: httpd
+              state: started 
 
     handlers:
       - name: restart apache2
