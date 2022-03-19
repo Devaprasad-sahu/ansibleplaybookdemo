@@ -6,5 +6,5 @@
     - 
       name: "ensure apache is running"
       service: 
-        name: httpd
+        name: apache2
         state: started
