@@ -19,8 +19,8 @@
         lineinfile: dest=/etc/apache2/sites-available/000-default.conf regexp="^<VirtualHost \*:80>" line="<VirtualHost *:7777>" state=present
         notify:
           - restart apache2
-       - name: ensure apache is running
-           service:
+      - name: ensure apache is running
+          service:
              name: httpd
              state: started 
 
